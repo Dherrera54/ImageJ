@@ -1,5 +1,6 @@
 package ij.process;
 import ij.measure.*;
+import ij.util.Statistics;
 import java.awt.*;
 
 /** Statistics, including the histogram, of an image or selection. */
@@ -90,6 +91,8 @@ public class ImageStatistics implements Measurements {
 	 * @see ij.measure.Measurements
 	*/
 	public static ImageStatistics getStatistics(ImageProcessor ip, int mOptions, Calibration cal) {
+		return Statistics.getStatistics(ip, mOptions, cal);
+		/*
 		Object pixels = ip.getPixels();
 		if (pixels instanceof byte[])
 			return new ByteStatistics(ip, mOptions, cal);
@@ -101,6 +104,7 @@ public class ImageStatistics implements Measurements {
 			return new FloatStatistics(ip, mOptions, cal);
 		else
 			throw new IllegalArgumentException("Pixels are not byte, short, int or float");
+			*/
 	}
 
 	void getRawMinAndMax(int minThreshold, int maxThreshold) {
