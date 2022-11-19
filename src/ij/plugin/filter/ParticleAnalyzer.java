@@ -939,20 +939,6 @@ public class ParticleAnalyzer implements PlugInFilter, Measurements {
 
 	ImageStatistics getStatistics(ImageProcessor ip, int mOptions, Calibration cal) {
 		return Statistics.getStatistics(ip, mOptions, cal);
-		/*
-		switch (imageType2) {
-			case BYTE:
-				return new ByteStatistics(ip, mOptions, cal);
-			case SHORT:
-				return new ShortStatistics(ip, mOptions, cal);
-			case FLOAT:
-				return new FloatStatistics(ip, mOptions, cal);
-			case RGB:
-				return new ColorStatistics(ip, mOptions, cal);
-			default:
-				return null;
-		}
-		*/
 	}
 
 	/** Saves statistics for one particle in a results table. This is
