@@ -317,6 +317,22 @@ public abstract class ImageProcessor implements Cloneable {
 	public boolean isGrayscale() {
 		return !isColorLut();
 	}
+	public boolean byteColorArrays(byte[] r, byte[] g, byte[] b, IndexColorModel in, int mSize ) {
+
+		in.getReds(r);
+		in.getGreens(g);
+		in.getBlues(b);
+		boolean isColor = false;
+		for (int i=0; i<mSize; i++) {
+			if ((reds[i] != greens[i]) || (greens[i] != blues[i])) {
+				isColor = true;
+				break;
+			}
+		}
+
+		return isColor;
+
+	}
 
 	/** Returns true if this image uses a color LUT. */
 	public boolean isColorLut() {
@@ -327,16 +343,7 @@ public abstract class ImageProcessor implements Cloneable {
 		byte[] reds = new byte[mapSize];
 		byte[] greens = new byte[mapSize];
 		byte[] blues = new byte[mapSize];
-		icm.getReds(reds);
-		icm.getGreens(greens);
-		icm.getBlues(blues);
-		boolean isColor = false;
-		for (int i=0; i<mapSize; i++) {
-			if ((reds[i] != greens[i]) || (greens[i] != blues[i])) {
-				isColor = true;
-				break;
-			}
-		}
+		boolean isColor = byteColorArrays(reds, greens, blues, icm, mapSize);
 		return isColor;
 	}
 
@@ -517,7 +524,6 @@ public abstract class ImageProcessor implements Cloneable {
 		}
 		int t1 = (int)minThreshold;
 		int t2 = (int)maxThreshold;
-		int index;
 		if (lutUpdate==RED_LUT)
 			for (int i=0; i<256; i++) {
 				if (i>=t1 && i<=t2) {
