@@ -2905,8 +2905,6 @@ public class ImagePlus implements ImageObserver, Measurements, Cloneable {
 	 public void paste() {
 		if (clipboard==null)
 			return;
-		int cType = clipboard.getType();
-		int iType = getType();
         int w = clipboard.getWidth();
         int h = clipboard.getHeight();
 		Roi cRoi = clipboard.getRoi();
