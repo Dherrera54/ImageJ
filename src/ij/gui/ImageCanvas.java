@@ -170,21 +170,13 @@ public class ImageCanvas extends Canvas implements MouseListener, MouseMotionLis
 		if (IJ.debugMode) IJ.log("setSourceRect: "+magnification+" "+(int)(srcRect.height*magnification+0.5)+" "+dstHeight+" "+srcRect);
 	}
 
-	void setSrcRect(Rectangle srcRect) {
-		setSourceRect(srcRect);
-	}
+
 		
 	public Rectangle getSrcRect() {
 		return srcRect;
 	}
 	
-	/** Obsolete; replaced by setSize() */
-	public void setDrawingSize(int width, int height) {
-		dstWidth = width;
-		dstHeight = height;
-		setSize(dstWidth, dstHeight);
-	}
-		
+
 	public void setSize(int width, int height) {
 		super.setSize(width, height);
 		dstWidth = width;

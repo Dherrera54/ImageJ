@@ -22,12 +22,24 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
+<<<<<<< HEAD
+			<id>1668560875957</id>
+=======
+			<id>1668746821222</id>
+>>>>>>> main
+=======
 			<id>1668649935095</id>
+>>>>>>> AMRT_refactoring
 			<name></name>
 			<type>30</type>
 			<matcher>
 				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+<<<<<<< HEAD
+				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+=======
 				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+>>>>>>> AMRT_refactoring
 			</matcher>
 		</filter>
 	</filteredResources>
